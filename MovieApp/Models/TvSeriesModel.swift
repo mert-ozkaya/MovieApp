@@ -15,6 +15,7 @@ class TvSeriesModel {
     var total_pages: Int
     var results = [TvSeriesResult]()
     
+    
     init(json: JSON) {
         page = json["page"].intValue
         total_results = json["total_results"].intValue
@@ -33,6 +34,8 @@ class TvSeriesResult{
     var vote_average: Float
     var poster_path: String?
     
+    var isFavourite:Bool = false
+
     init(json: JSON) {
         id = json["id"].intValue
         original_name = json["original_name"].stringValue
