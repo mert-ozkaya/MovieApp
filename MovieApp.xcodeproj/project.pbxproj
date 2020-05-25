@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		0DAE1D611B710032207048DB /* Pods_MovieApp_MovieAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2423DA222078A4500AF97EE /* Pods_MovieApp_MovieAppUITests.framework */; };
-		4174541D247A731F000FE55E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4174541C247A731E000FE55E /* Services.swift */; };
+		4121E502247A8BA20004B8CC /* TvSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E501247A8BA20004B8CC /* TvSeriesModel.swift */; };
+		4121E506247A8E7A0004B8CC /* TvSeriesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E505247A8E7A0004B8CC /* TvSeriesServices.swift */; };
+		4121E508247AAC960004B8CC /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E507247AAC960004B8CC /* ErrorModel.swift */; };
+		4121E50C247ADCCE0004B8CC /* PopularTvSeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E50B247ADCCE0004B8CC /* PopularTvSeriesCell.swift */; };
+		4121E50E247B33C00004B8CC /* DetailsOfTvSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E50D247B33C00004B8CC /* DetailsOfTvSeriesModel.swift */; };
+		4121E510247C16AD0004B8CC /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E50F247C16AD0004B8CC /* UIImageExtension.swift */; };
+		4121E512247C226F0004B8CC /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E511247C226F0004B8CC /* GenreModel.swift */; };
+		4121E514247C27730004B8CC /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E513247C27730004B8CC /* BaseService.swift */; };
+		4121E51B247C48E10004B8CC /* favourites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4121E519247C48E10004B8CC /* favourites.xcdatamodeld */; };
+		4121E51E247C49B90004B8CC /* FavouritesTvSeries+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E51D247C49B80004B8CC /* FavouritesTvSeries+CoreDataProperties.swift */; };
+		4121E51F247C49B90004B8CC /* FavouritesTvSeries+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E51C247C49B80004B8CC /* FavouritesTvSeries+CoreDataClass.swift */; };
+		4121E523247C4BC00004B8CC /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E522247C4BC00004B8CC /* PersistenceService.swift */; };
 		41745420247A7DD0000FE55E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4174541F247A7DD0000FE55E /* BaseViewController.swift */; };
 		41745428247A8282000FE55E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41745427247A8282000FE55E /* UIViewExtensions.swift */; };
 		417753502479E7AD00613C58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4177534F2479E7AD00613C58 /* AppDelegate.swift */; };
 		417753522479E7AD00613C58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417753512479E7AD00613C58 /* SceneDelegate.swift */; };
-		417753542479E7AD00613C58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417753532479E7AD00613C58 /* ViewController.swift */; };
+		417753542479E7AD00613C58 /* PopularTvSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417753532479E7AD00613C58 /* PopularTvSeriesViewController.swift */; };
 		417753572479E7AD00613C58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417753552479E7AD00613C58 /* Main.storyboard */; };
 		417753592479E7B100613C58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417753582479E7B100613C58 /* Assets.xcassets */; };
 		4177535C2479E7B100613C58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4177535A2479E7B100613C58 /* LaunchScreen.storyboard */; };
@@ -43,13 +54,24 @@
 /* Begin PBXFileReference section */
 		202FECCFE4D4BB9BC62C5D3D /* Pods_MovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4260DCEE260B5547423F00 /* Pods-MovieAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieAppTests.release.xcconfig"; path = "Target Support Files/Pods-MovieAppTests/Pods-MovieAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		4174541C247A731E000FE55E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		4121E501247A8BA20004B8CC /* TvSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesModel.swift; sourceTree = "<group>"; };
+		4121E505247A8E7A0004B8CC /* TvSeriesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesServices.swift; sourceTree = "<group>"; };
+		4121E507247AAC960004B8CC /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		4121E50B247ADCCE0004B8CC /* PopularTvSeriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTvSeriesCell.swift; sourceTree = "<group>"; };
+		4121E50D247B33C00004B8CC /* DetailsOfTvSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsOfTvSeriesModel.swift; sourceTree = "<group>"; };
+		4121E50F247C16AD0004B8CC /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		4121E511247C226F0004B8CC /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
+		4121E513247C27730004B8CC /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		4121E51A247C48E10004B8CC /* favourites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = favourites.xcdatamodel; sourceTree = "<group>"; };
+		4121E51C247C49B80004B8CC /* FavouritesTvSeries+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouritesTvSeries+CoreDataClass.swift"; path = "/Users/mert/Desktop/Workspace/MovieApp/MovieApp/FavouritesTvSeries+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		4121E51D247C49B80004B8CC /* FavouritesTvSeries+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouritesTvSeries+CoreDataProperties.swift"; path = "/Users/mert/Desktop/Workspace/MovieApp/MovieApp/FavouritesTvSeries+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		4121E522247C4BC00004B8CC /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		4174541F247A7DD0000FE55E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		41745427247A8282000FE55E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		4177534C2479E7AD00613C58 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4177534F2479E7AD00613C58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		417753512479E7AD00613C58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		417753532479E7AD00613C58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		417753532479E7AD00613C58 /* PopularTvSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTvSeriesViewController.swift; sourceTree = "<group>"; };
 		417753562479E7AD00613C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		417753582479E7B100613C58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4177535B2479E7B100613C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,10 +119,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4121E515247C2E7D0004B8CC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4121E50B247ADCCE0004B8CC /* PopularTvSeriesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4174541E247A7D81000FE55E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				417753532479E7AD00613C58 /* ViewController.swift */,
+				4121E515247C2E7D0004B8CC /* Cells */,
+				417753532479E7AD00613C58 /* PopularTvSeriesViewController.swift */,
 				4174541F247A7DD0000FE55E /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
@@ -110,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				41745427247A8282000FE55E /* UIViewExtensions.swift */,
+				4121E50F247C16AD0004B8CC /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -124,7 +156,8 @@
 		41745423247A7E7A000FE55E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4174541C247A731E000FE55E /* Services.swift */,
+				4121E505247A8E7A0004B8CC /* TvSeriesServices.swift */,
+				4121E513247C27730004B8CC /* BaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -150,6 +183,10 @@
 		41745426247A7EAB000FE55E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4121E501247A8BA20004B8CC /* TvSeriesModel.swift */,
+				4121E507247AAC960004B8CC /* ErrorModel.swift */,
+				4121E50D247B33C00004B8CC /* DetailsOfTvSeriesModel.swift */,
+				4121E511247C226F0004B8CC /* GenreModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +216,8 @@
 		4177534E2479E7AD00613C58 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				4121E51C247C49B80004B8CC /* FavouritesTvSeries+CoreDataClass.swift */,
+				4121E51D247C49B80004B8CC /* FavouritesTvSeries+CoreDataProperties.swift */,
 				4177534F2479E7AD00613C58 /* AppDelegate.swift */,
 				417753512479E7AD00613C58 /* SceneDelegate.swift */,
 				41745425247A7E93000FE55E /* Storyboards */,
@@ -188,6 +227,8 @@
 				41745424247A7E88000FE55E /* Other */,
 				41745421247A7E35000FE55E /* Extensions */,
 				41745422247A7E57000FE55E /* Utilities */,
+				4121E519247C48E10004B8CC /* favourites.xcdatamodeld */,
+				4121E522247C4BC00004B8CC /* PersistenceService.swift */,
 			);
 			path = MovieApp;
 			sourceTree = "<group>";
@@ -263,6 +304,7 @@
 				4177535E2479E7B100613C58 /* Sources */,
 				4177535F2479E7B100613C58 /* Frameworks */,
 				417753602479E7B100613C58 /* Resources */,
+				8034B4EC988D66AE7F34DF77 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -426,6 +468,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8034B4EC988D66AE7F34DF77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieAppTests/Pods-MovieAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieAppTests/Pods-MovieAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieAppTests/Pods-MovieAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DC2CE05965C709C7C1A07CC3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,11 +532,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				41745420247A7DD0000FE55E /* BaseViewController.swift in Sources */,
-				417753542479E7AD00613C58 /* ViewController.swift in Sources */,
-				4174541D247A731F000FE55E /* Services.swift in Sources */,
+				417753542479E7AD00613C58 /* PopularTvSeriesViewController.swift in Sources */,
+				4121E51F247C49B90004B8CC /* FavouritesTvSeries+CoreDataClass.swift in Sources */,
 				417753502479E7AD00613C58 /* AppDelegate.swift in Sources */,
+				4121E50C247ADCCE0004B8CC /* PopularTvSeriesCell.swift in Sources */,
+				4121E510247C16AD0004B8CC /* UIImageExtension.swift in Sources */,
 				41745428247A8282000FE55E /* UIViewExtensions.swift in Sources */,
+				4121E502247A8BA20004B8CC /* TvSeriesModel.swift in Sources */,
+				4121E51E247C49B90004B8CC /* FavouritesTvSeries+CoreDataProperties.swift in Sources */,
+				4121E514247C27730004B8CC /* BaseService.swift in Sources */,
+				4121E50E247B33C00004B8CC /* DetailsOfTvSeriesModel.swift in Sources */,
 				417753522479E7AD00613C58 /* SceneDelegate.swift in Sources */,
+				4121E512247C226F0004B8CC /* GenreModel.swift in Sources */,
+				4121E523247C4BC00004B8CC /* PersistenceService.swift in Sources */,
+				4121E508247AAC960004B8CC /* ErrorModel.swift in Sources */,
+				4121E506247A8E7A0004B8CC /* TvSeriesServices.swift in Sources */,
+				4121E51B247C48E10004B8CC /* favourites.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +876,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4121E519247C48E10004B8CC /* favourites.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4121E51A247C48E10004B8CC /* favourites.xcdatamodel */,
+			);
+			currentVersion = 4121E51A247C48E10004B8CC /* favourites.xcdatamodel */;
+			path = favourites.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 417753442479E7AD00613C58 /* Project object */;
 }
