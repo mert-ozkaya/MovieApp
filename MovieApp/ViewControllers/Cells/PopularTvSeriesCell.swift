@@ -31,7 +31,7 @@ class PopularTvSeriesCell: UITableViewCell {
 //        super.setSelected(selected, animated: animated)
 //    }
     
-    func setupUI(_ tvSeriesResult: TvSeriesResult,_ rankingNumber: Int, favouriteIds: [FavouritesTvSeries]) {
+    func setupUI(_ tvSeriesResult: TvSeriesResult,_ rankingNumber: Int) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapFavourite))
         favouriteView.isUserInteractionEnabled = true
         favouriteView.addGestureRecognizer(tap)
@@ -40,25 +40,20 @@ class PopularTvSeriesCell: UITableViewCell {
         self.numberLabel.text = String(rankingNumber) + ". "
         self.ratingLabel.text = String(tvSeriesResult.vote_average)
         
-        for favouriteObject in favouriteIds {
-            if tvSeriesResult.id == favouriteObject.id {
-                self.favouriteBookmarkLabel.text = "Favorilerimden Çıkar"
-                self.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark.fill")
-            }else {
-                self.favouriteBookmarkLabel.text = "Favorilerimden Ekle"
-                self.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark")
-            }
+        if tvSeriesResult.isFavourite {
+            self.favouriteBookmarkLabel.text = "Favorilerimden Çıkar"
+            self.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark.fill")
+        }else {
+            self.favouriteBookmarkLabel.text = "Favorilerimden Ekle"
+            self.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark")
         }
     
-        print(tvSeriesResult.id)
         if let poster_path = tvSeriesResult.poster_path {
             let imageUrl = "https://image.tmdb.org/t/p/w92" + poster_path
             self.posterOfTvSeries.setImage(with: imageUrl)
         }else {
             print("poster boş")
         }
-        
-        
     }
 
 }

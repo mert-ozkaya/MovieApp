@@ -23,15 +23,23 @@ class PopularTvSeriesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        
+        getPopularTvSeries(page)
+    }
+    
+    private func fetchAndSetFavouriteId() {
         let fetchRequest: NSFetchRequest<FavouritesTvSeries> = FavouritesTvSeries.fetchRequest()
         
         do{
             let favourites = try PersistenceService.context.fetch(fetchRequest)
             favouriteIds = favourites
+            for item in favouriteIds {
+                for result in tvSeriesResults {
+                    if item.id == result.id {
+                        result.isFavourite = true
+                    }
+                }
+            }
         }catch {}
-        
-        getPopularTvSeries(page)
     }
     
     private func setTableView() {
@@ -46,6 +54,7 @@ class PopularTvSeriesViewController: BaseViewController {
             if let result = result {
                 self.tvSeriesResults.append(contentsOf: result.results)
                 self.page = result.page + 1
+                self.fetchAndSetFavouriteId()
                 self.setTableView()
             }
             
@@ -58,11 +67,23 @@ class PopularTvSeriesViewController: BaseViewController {
     }
     
     
-    private func deleteFavouriteFromCoreData(index: Int) {
+    private func deleteFavouriteById(_ id: Int) {
         let context:NSManagedObjectContext = PersistenceService.context
-         context.delete(favouriteIds[index])
-         
-         favouriteIds.remove(at: index)
+        var  i = 0
+        while i < favouriteIds.count {
+            if favouriteIds[i].id == id {
+                context.delete(favouriteIds[i])
+                favouriteIds.remove(at: i)
+                break
+            }
+            
+            i += 1
+            
+        }
+        
+//        context.delete(favouriteIds[index])
+//
+//         favouriteIds.remove(at: index)
         do {
             try context.save()
             tableView.reloadData()
@@ -82,23 +103,59 @@ extension PopularTvSeriesViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "popularTvSeriesCell", for: indexPath) as! PopularTvSeriesCell
         
         let item = tvSeriesResults[indexPath.row]
-        cell.setupUI(item, indexPath.row + 1, favouriteIds: favouriteIds)
+        cell.setupUI(item, indexPath.row + 1)
         
+        //print("indexPath:", indexPath.row)
         cell.actionBlock = {
-            let favouriteTvSeries = FavouritesTvSeries(context: PersistenceService.context)
-            favouriteTvSeries.id = Int32(item.id)
-            PersistenceService.saveContext()
+            print("Tıklandı")
+            print(item.original_name)
             
-            for favouriteItem in self.favouriteIds {
-                if favouriteItem.id == item.id self.favouriteIds {
-                    
-                }else if self.favouriteIds.count == self.favouriteIds.inde
+            
+            if item.isFavourite{
+                self.deleteFavouriteById(item.id)
+                item.isFavourite = false
+                tableView.reloadData()
+            }else {
+                item.isFavourite = true
+                let favouriteTvSeries = FavouritesTvSeries(context: PersistenceService.context)
+                favouriteTvSeries.id = Int32(item.id)
+                self.favouriteIds.append(favouriteTvSeries)
+                PersistenceService.saveContext()
+                tableView.reloadData()
             }
+//
+//            var isContain = false
+//            var i = 0
+//            if self.favouriteIds.count > 0 {
+//                while i < self.favouriteIds.count {
+//                    if self.favouriteIds[i].id == item.id {
+//                        isContain = true
+//                        self.deleteFavouriteById(item.id)
+//                        cell.favouriteBookmarkLabel.text = "Favorilerime Ekle"
+//                        cell.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark")
+//                        self.tableView.reloadData()
+//                        print("var")
+//                        break
+//                    }
+//                    i += 1
+//                }
+//            }
+//
+//
+//            if isContain == false {
+//                print("Kaydetme")
+//                let favouriteTvSeries = FavouritesTvSeries(context: PersistenceService.context)
+//                favouriteTvSeries.id = Int32(item.id)
+//                self.favouriteIds.append(favouriteTvSeries)
+//                PersistenceService.saveContext()
+//                cell.favouriteBookmarkLabel.text = "Favorilerimden Çıkar"
+//                cell.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark.fill")
+//            }
             
-            self.favouriteIds.append(favouriteTvSeries)
             
-            cell.favouriteBookmarkLabel.text = "Favorilerimden Çıkar"
-            cell.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark.fill")
+            for fav in self.favouriteIds {
+                print("içeren ID:", fav.id)
+            }
         }
         
         return cell
