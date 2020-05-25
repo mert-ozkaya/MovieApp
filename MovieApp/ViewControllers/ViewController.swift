@@ -8,10 +8,19 @@
 
 import UIKit
 
-class ViewController: BaseViewController {
+class PopularTvSeriesViewController: BaseViewController {
 
+//    private var popularTvSeries: TvSeries
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let deneme = TvSeriesServices()
+        deneme.getPopularTvSeries({result in
+            if let result = result{
+                print(result)
+            }
+        })
     }
 
 
