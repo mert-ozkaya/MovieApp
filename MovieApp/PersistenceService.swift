@@ -32,7 +32,7 @@ class PersistenceService {
     }()
     
     static func saveContext() {
-        let context = PersistenceService.context
+        let context = persistentContainer.viewContext
         
         if context.hasChanges {
             do {
