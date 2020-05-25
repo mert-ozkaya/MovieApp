@@ -1,12 +1,26 @@
 PODS:
   - Alamofire (4.7.3)
   - Kingfisher (5.2.0)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
   - SwiftyJSON (4.3.0)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
   - Kingfisher (~> 5.2.0)
+  - RxBlocking (~> 5)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - RxTest (~> 5)
   - SwiftyJSON (~> 4.0)
   - Swinject
 
@@ -14,15 +28,25 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - RxBlocking
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxTest
     - SwiftyJSON
     - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: e013ad3ad77b135364f0084ce745a35945fecbf6
+PODFILE CHECKSUM: f427203ae624641d93e5e475d784c69cba597ac8
 
 COCOAPODS: 1.9.1

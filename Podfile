@@ -8,9 +8,14 @@ target 'MovieApp' do
   pod 'Kingfisher', '~>5.2.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Swinject'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  
   target 'MovieAppTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking', '~> 5'
+    pod 'RxTest', '~> 5'
   end
 
   target 'MovieAppUITests' do
