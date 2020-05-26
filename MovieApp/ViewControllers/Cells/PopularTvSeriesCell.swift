@@ -17,21 +17,17 @@ class PopularTvSeriesCell: UITableViewCell {
     @IBOutlet weak var favouriteView: UIView!
     @IBOutlet weak var favouriteBookmarkIcon: UIImageView!
     @IBOutlet weak var favouriteBookmarkLabel: UILabel!
+    
+    // cell içerisindeki Favorilerime Ekle ve Çıkar butonuna basıldığında bu action çalışacak
     var actionBlock: (() -> Void)? = nil
 
+    
     @objc func tapFavourite(_ sender:UITapGestureRecognizer) {
         actionBlock?()
     }
     
-    //    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
-    
     func setupUI(_ tvSeriesResult: TvSeriesResult,_ rankingNumber: Int) {
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapFavourite))
         favouriteView.isUserInteractionEnabled = true
         favouriteView.addGestureRecognizer(tap)
@@ -44,7 +40,7 @@ class PopularTvSeriesCell: UITableViewCell {
             self.favouriteBookmarkLabel.text = "Favorilerimden Çıkar"
             self.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark.fill")
         }else {
-            self.favouriteBookmarkLabel.text = "Favorilerimden Ekle"
+            self.favouriteBookmarkLabel.text = "Favorilerime Ekle"
             self.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark")
         }
     
