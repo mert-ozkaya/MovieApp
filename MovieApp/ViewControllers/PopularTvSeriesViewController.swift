@@ -14,9 +14,8 @@ class PopularTvSeriesViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-//    private var tvSeries: TvSeriesModel?
     private var tvSeriesResults = [TvSeriesResult]()
-    let tvSeriesObject = TvSeriesServices()
+    let tvSeriesServiceFetcher = TvSeriesServices()
     private var page = 1
     private var favouriteIds = [FavouritesTvSeries]()
     
@@ -50,7 +49,7 @@ class PopularTvSeriesViewController: BaseViewController {
     }
 
     private func getPopularTvSeries(_ page: Int) {
-        tvSeriesObject.getPopularTvSeries(page:page, {result, error in
+        tvSeriesServiceFetcher.getPopularTvSeries(page:page, {result, error in
             if let result = result {
                 self.tvSeriesResults.append(contentsOf: result.results)
                 self.page = result.page + 1
@@ -76,14 +75,9 @@ class PopularTvSeriesViewController: BaseViewController {
                 favouriteIds.remove(at: i)
                 break
             }
-            
             i += 1
-            
         }
         
-//        context.delete(favouriteIds[index])
-//
-//         favouriteIds.remove(at: index)
         do {
             try context.save()
             tableView.reloadData()
@@ -123,57 +117,22 @@ extension PopularTvSeriesViewController: UITableViewDelegate, UITableViewDataSou
                 PersistenceService.saveContext()
                 tableView.reloadData()
             }
-//
-//            var isContain = false
-//            var i = 0
-//            if self.favouriteIds.count > 0 {
-//                while i < self.favouriteIds.count {
-//                    if self.favouriteIds[i].id == item.id {
-//                        isContain = true
-//                        self.deleteFavouriteById(item.id)
-//                        cell.favouriteBookmarkLabel.text = "Favorilerime Ekle"
-//                        cell.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark")
-//                        self.tableView.reloadData()
-//                        print("var")
-//                        break
-//                    }
-//                    i += 1
-//                }
-//            }
-//
-//
-//            if isContain == false {
-//                print("Kaydetme")
-//                let favouriteTvSeries = FavouritesTvSeries(context: PersistenceService.context)
-//                favouriteTvSeries.id = Int32(item.id)
-//                self.favouriteIds.append(favouriteTvSeries)
-//                PersistenceService.saveContext()
-//                cell.favouriteBookmarkLabel.text = "Favorilerimden Çıkar"
-//                cell.favouriteBookmarkIcon.image = UIImage(systemName: "bookmark.fill")
-//            }
-            
-            
-            for fav in self.favouriteIds {
-                print("içeren ID:", fav.id)
-            }
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
             if indexPath.row == tvSeriesResults.count-1 {
                 getPopularTvSeries(page)
             }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "tvSeriesDetails") as! TvSeriesDetailsViewController
         
-        
-        
+        viewController.id = tvSeriesResults[indexPath.row].id
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     
