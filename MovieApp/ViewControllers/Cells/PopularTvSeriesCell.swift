@@ -49,8 +49,7 @@ class PopularTvSeriesCell: UITableViewCell {
         }
     
         if let poster_path = tvSeriesResult.poster_path {
-            let imageUrl = "https://image.tmdb.org/t/p/w92" + poster_path
-            self.posterOfTvSeries.setImage(with: imageUrl)
+            self.posterOfTvSeries.setImage(poster_path, photoType: "w92")
         }else {
             print("poster boş")
         }
