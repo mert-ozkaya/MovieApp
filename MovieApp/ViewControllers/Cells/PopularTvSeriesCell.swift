@@ -46,8 +46,6 @@ class PopularTvSeriesCell: UITableViewCell {
     
         if let poster_path = tvSeriesResult.poster_path {
             self.posterOfTvSeries.setImage(poster_path, photoType: "w92")
-        }else {
-            print("poster boş")
         }
     }
 
