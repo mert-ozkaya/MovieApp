@@ -10,8 +10,9 @@ import Foundation
 import Kingfisher
 
 extension UIImageView {
-    func setImage(with URLString: String) {
-        setImage(with: URLString, placeholder: UIImage(named: "notFound")!) // TODO: placeholder gelince değiştirilecek.
+    func setImage(_ imagePath: String, photoType: String) {
+        let imageUrl = "https://image.tmdb.org/t/p/" + photoType  + imagePath
+        setImage(with: imageUrl, placeholder: UIImage(named: "notFound")!)
     }
     
     func setImage(with URLString: String, placeholder: UIImage) {
