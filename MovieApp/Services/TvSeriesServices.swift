@@ -24,7 +24,6 @@ class TvSeriesServices {
 
     public func getPopularTvSeries(page: Int, _ handler: @escaping(TvSeriesModel?, ErrorModel?) -> Void) {
         let url = self.API + "/popular" + "?api_key=" + api_key + "&page=" + String(page)
-        print(url)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             
             if let status = response.response?.statusCode {
