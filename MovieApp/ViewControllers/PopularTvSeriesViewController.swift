@@ -32,7 +32,7 @@ class PopularTvSeriesViewController: UIViewController {
         super.viewDidLoad()
         refreshButtonShowAndHide(isChange: false)
         tableView.tableFooterView = UIView()
-        getPopularTvSeries(page)
+        getPopularTvSeries(page, isRefresh: false)
         executeRepeatedly()
     }
     
@@ -42,9 +42,7 @@ class PopularTvSeriesViewController: UIViewController {
     }
     
     @IBAction func refresh(_ sender: UIButton) {
-        tvSeriesResults.removeAll()
-        page = 1
-        getPopularTvSeries(page)
+        getPopularTvSeries(1, isRefresh: true)
         refreshButtonShowAndHide(isChange: false)
     }
     
@@ -64,7 +62,7 @@ class PopularTvSeriesViewController: UIViewController {
             isSortingChange(nextPage: 1)
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { [weak self] in
             self?.executeRepeatedly()
         }
     }
@@ -100,10 +98,14 @@ class PopularTvSeriesViewController: UIViewController {
     }
 
     // Popüler tv dizilerinin çekilip set edildiği fonksiyon
-    private func getPopularTvSeries(_ page: Int) {
+    private func getPopularTvSeries(_ page: Int, isRefresh: Bool) {
         tvSeriesServiceFetcher.getPopularTvSeries(page:page, {result, error in
             if let result = result {
-                self.tvSeriesResults.append(contentsOf: result.results)
+                if(isRefresh) {
+                    self.tvSeriesResults = result.results
+                }else {
+                    self.tvSeriesResults.append(contentsOf: result.results)
+                }
                 self.page = result.page
                 self.fetchAndSetFavouriteId()
                 self.setTableView()
@@ -207,7 +209,7 @@ extension PopularTvSeriesViewController: UITableViewDelegate, UITableViewDataSou
     //Görüntülenen indexPath.row son cellden bir öncesindeyse bir sonraki sayfa numarası ile veriler çekilir
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == tvSeriesResults.count-1 {
-                getPopularTvSeries(page + 1)
+                getPopularTvSeries(page + 1, isRefresh: false)
             }
     }
     
