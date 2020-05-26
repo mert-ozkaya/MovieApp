@@ -13,7 +13,9 @@ import CoreData
 class PopularTvSeriesViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var refreshButtonHeight: NSLayoutConstraint!
+    
     private var tvSeriesResults = [TvSeriesResult]()
     let tvSeriesServiceFetcher = TvSeriesServices()
     private var page = 1
@@ -21,8 +23,37 @@ class PopularTvSeriesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshButtonShowAndHide(isChange: false)
         tableView.tableFooterView = UIView()
         getPopularTvSeries(page)
+        executeRepeatedly()
+    }
+    
+    @IBAction func refresh(_ sender: UIButton) {
+        tvSeriesResults.removeAll()
+        page = 1
+        getPopularTvSeries(page)
+        refreshButtonShowAndHide(isChange: false)
+    }
+    
+    func refreshButtonShowAndHide(isChange: Bool) {
+        if isChange {
+            self.refreshButton.isHidden = false
+            self.refreshButtonHeight.constant = 40
+        }else {
+            self.refreshButton.isHidden = true
+            self.refreshButtonHeight.constant = 0
+        }
+    }
+    
+    private func executeRepeatedly() {
+        if tvSeriesResults.count > 0 {
+            isSortingChange(nextPage: 1)
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { [weak self] in
+            self?.executeRepeatedly()
+        }
     }
     
     private func fetchAndSetFavouriteId() {
@@ -52,7 +83,7 @@ class PopularTvSeriesViewController: BaseViewController {
         tvSeriesServiceFetcher.getPopularTvSeries(page:page, {result, error in
             if let result = result {
                 self.tvSeriesResults.append(contentsOf: result.results)
-                self.page = result.page + 1
+                self.page = result.page
                 self.fetchAndSetFavouriteId()
                 self.setTableView()
             }
@@ -63,6 +94,37 @@ class PopularTvSeriesViewController: BaseViewController {
             }
             
         })
+    }
+    
+    
+    private func isSortingChange(nextPage: Int) {
+        tvSeriesServiceFetcher.getPopularTvSeries(page:nextPage, {result, error in
+            
+            if let result = result {
+                var index = 0
+                var j = result.page * 20 - 20
+
+                while index < result.results.count {
+                    if self.tvSeriesResults[j].id != result.results[index].id {
+                        print("Sıralama Hatalı")
+                        self.refreshButtonShowAndHide(isChange: true)
+                        return
+                    }
+                    j += 1
+                    index += 1
+                }
+                
+                if nextPage < self.page {
+                    self.isSortingChange(nextPage: nextPage + 1)
+                }else{
+                    print("Sıralama doğru")
+                    self.refreshButtonShowAndHide(isChange: false)
+                }
+ 
+            }
+
+        })
+
     }
     
     
@@ -95,16 +157,12 @@ extension PopularTvSeriesViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "popularTvSeriesCell", for: indexPath) as! PopularTvSeriesCell
-        
         let item = tvSeriesResults[indexPath.row]
         cell.setupUI(item, indexPath.row + 1)
         
-        //print("indexPath:", indexPath.row)
         cell.actionBlock = {
-            print("Tıklandı")
-            print(item.original_name)
-            
-            
+//            print("Tıklandı")
+//            print(item.original_name)
             if item.isFavourite{
                 self.deleteFavouriteById(item.id)
                 item.isFavourite = false
@@ -124,7 +182,7 @@ extension PopularTvSeriesViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == tvSeriesResults.count-1 {
-                getPopularTvSeries(page)
+                getPopularTvSeries(page + 1)
             }
     }
     
