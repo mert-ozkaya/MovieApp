@@ -51,7 +51,7 @@ class PopularTvSeriesViewController: BaseViewController {
             isSortingChange(nextPage: 1)
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) { [weak self] in
             self?.executeRepeatedly()
         }
     }
