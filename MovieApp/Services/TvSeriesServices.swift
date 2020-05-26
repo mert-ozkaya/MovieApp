@@ -15,7 +15,6 @@ import SwiftyJSON
 
 class TvSeriesServices {
     private let BASE_URL = "https://api.themoviedb.org"
-    private let api_key = "0b3df41bfff0d5fd912cf1d6f9cdfaf1"
     private var API: String
     
     init() {
