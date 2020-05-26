@@ -15,13 +15,14 @@
 		4121E50E247B33C00004B8CC /* DetailsOfTvSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E50D247B33C00004B8CC /* DetailsOfTvSeriesModel.swift */; };
 		4121E510247C16AD0004B8CC /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E50F247C16AD0004B8CC /* UIImageExtension.swift */; };
 		4121E512247C226F0004B8CC /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E511247C226F0004B8CC /* GenreModel.swift */; };
-		4121E514247C27730004B8CC /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E513247C27730004B8CC /* BaseService.swift */; };
 		4121E51B247C48E10004B8CC /* favourites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4121E519247C48E10004B8CC /* favourites.xcdatamodeld */; };
 		4121E51E247C49B90004B8CC /* FavouritesTvSeries+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E51D247C49B80004B8CC /* FavouritesTvSeries+CoreDataProperties.swift */; };
 		4121E51F247C49B90004B8CC /* FavouritesTvSeries+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E51C247C49B80004B8CC /* FavouritesTvSeries+CoreDataClass.swift */; };
 		4121E523247C4BC00004B8CC /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E522247C4BC00004B8CC /* PersistenceService.swift */; };
 		4121E525247C8ED20004B8CC /* TvSeriesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121E524247C8ED20004B8CC /* TvSeriesDetailsViewController.swift */; };
-		41745420247A7DD0000FE55E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4174541F247A7DD0000FE55E /* BaseViewController.swift */; };
+		413620A5247D435A0047F3EE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413620A4247D435A0047F3EE /* UIViewControllerExtension.swift */; };
+		413620A8247D5C680047F3EE /* FavouritesTvSeries+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413620A6247D5C680047F3EE /* FavouritesTvSeries+CoreDataClass.swift */; };
+		413620A9247D5C680047F3EE /* FavouritesTvSeries+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413620A7247D5C680047F3EE /* FavouritesTvSeries+CoreDataProperties.swift */; };
 		41745428247A8282000FE55E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41745427247A8282000FE55E /* UIViewExtensions.swift */; };
 		417753502479E7AD00613C58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4177534F2479E7AD00613C58 /* AppDelegate.swift */; };
 		417753522479E7AD00613C58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417753512479E7AD00613C58 /* SceneDelegate.swift */; };
@@ -62,13 +63,14 @@
 		4121E50D247B33C00004B8CC /* DetailsOfTvSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsOfTvSeriesModel.swift; sourceTree = "<group>"; };
 		4121E50F247C16AD0004B8CC /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		4121E511247C226F0004B8CC /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
-		4121E513247C27730004B8CC /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		4121E51A247C48E10004B8CC /* favourites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = favourites.xcdatamodel; sourceTree = "<group>"; };
 		4121E51C247C49B80004B8CC /* FavouritesTvSeries+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouritesTvSeries+CoreDataClass.swift"; path = "/Users/mert/Desktop/Workspace/MovieApp/MovieApp/FavouritesTvSeries+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		4121E51D247C49B80004B8CC /* FavouritesTvSeries+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouritesTvSeries+CoreDataProperties.swift"; path = "/Users/mert/Desktop/Workspace/MovieApp/MovieApp/FavouritesTvSeries+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		4121E522247C4BC00004B8CC /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		4121E524247C8ED20004B8CC /* TvSeriesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesDetailsViewController.swift; sourceTree = "<group>"; };
-		4174541F247A7DD0000FE55E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		413620A4247D435A0047F3EE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		413620A6247D5C680047F3EE /* FavouritesTvSeries+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouritesTvSeries+CoreDataClass.swift"; path = "/Users/mert/Desktop/Workspace/MovieApp/MovieApp/FavouritesTvSeries+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		413620A7247D5C680047F3EE /* FavouritesTvSeries+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouritesTvSeries+CoreDataProperties.swift"; path = "/Users/mert/Desktop/Workspace/MovieApp/MovieApp/FavouritesTvSeries+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		41745427247A8282000FE55E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		4177534C2479E7AD00613C58 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4177534F2479E7AD00613C58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +136,6 @@
 			children = (
 				4121E515247C2E7D0004B8CC /* Cells */,
 				417753532479E7AD00613C58 /* PopularTvSeriesViewController.swift */,
-				4174541F247A7DD0000FE55E /* BaseViewController.swift */,
 				4121E524247C8ED20004B8CC /* TvSeriesDetailsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -145,6 +146,7 @@
 			children = (
 				41745427247A8282000FE55E /* UIViewExtensions.swift */,
 				4121E50F247C16AD0004B8CC /* UIImageExtension.swift */,
+				413620A4247D435A0047F3EE /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				4121E505247A8E7A0004B8CC /* TvSeriesServices.swift */,
-				4121E513247C27730004B8CC /* BaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -230,6 +231,8 @@
 				41745424247A7E88000FE55E /* Other */,
 				41745421247A7E35000FE55E /* Extensions */,
 				41745422247A7E57000FE55E /* Utilities */,
+				413620A6247D5C680047F3EE /* FavouritesTvSeries+CoreDataClass.swift */,
+				413620A7247D5C680047F3EE /* FavouritesTvSeries+CoreDataProperties.swift */,
 				4121E519247C48E10004B8CC /* favourites.xcdatamodeld */,
 				4121E522247C4BC00004B8CC /* PersistenceService.swift */,
 			);
@@ -534,7 +537,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41745420247A7DD0000FE55E /* BaseViewController.swift in Sources */,
 				417753542479E7AD00613C58 /* PopularTvSeriesViewController.swift in Sources */,
 				4121E525247C8ED20004B8CC /* TvSeriesDetailsViewController.swift in Sources */,
 				4121E51F247C49B90004B8CC /* FavouritesTvSeries+CoreDataClass.swift in Sources */,
@@ -544,13 +546,15 @@
 				41745428247A8282000FE55E /* UIViewExtensions.swift in Sources */,
 				4121E502247A8BA20004B8CC /* TvSeriesModel.swift in Sources */,
 				4121E51E247C49B90004B8CC /* FavouritesTvSeries+CoreDataProperties.swift in Sources */,
-				4121E514247C27730004B8CC /* BaseService.swift in Sources */,
 				4121E50E247B33C00004B8CC /* DetailsOfTvSeriesModel.swift in Sources */,
 				417753522479E7AD00613C58 /* SceneDelegate.swift in Sources */,
 				4121E512247C226F0004B8CC /* GenreModel.swift in Sources */,
+				413620A8247D5C680047F3EE /* FavouritesTvSeries+CoreDataClass.swift in Sources */,
 				4121E523247C4BC00004B8CC /* PersistenceService.swift in Sources */,
 				4121E508247AAC960004B8CC /* ErrorModel.swift in Sources */,
+				413620A5247D435A0047F3EE /* UIViewControllerExtension.swift in Sources */,
 				4121E506247A8E7A0004B8CC /* TvSeriesServices.swift in Sources */,
+				413620A9247D5C680047F3EE /* FavouritesTvSeries+CoreDataProperties.swift in Sources */,
 				4121E51B247C48E10004B8CC /* favourites.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
