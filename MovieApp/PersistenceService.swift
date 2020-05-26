@@ -43,6 +43,27 @@ class PersistenceService {
             }
         }
     }
+    
+    
+    static func deleteContextById(array: [FavouritesTvSeries], id: Int) {
+        let context:NSManagedObjectContext = PersistenceService.context
+        var  i = 0
+        while i < array.count {
+            if array[i].id == id {
+                context.delete(array[i])
+            }
+            i += 1
+        }
+        
+        do {
+        try context.save()
+        } catch _ {}
+        
+    }
+    
+    static func isContainId() {
+        
+    }
 
 
 }
