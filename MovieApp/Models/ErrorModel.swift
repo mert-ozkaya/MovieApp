@@ -17,5 +17,4 @@ class ErrorModel {
         status_message = json["status_message"].stringValue
         status_code = json["status_code"].intValue
     }
-    
 }
