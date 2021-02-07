@@ -9,7 +9,7 @@
 import UIKit
 
 
-let api_key = "0b3df41bfff0d5fd912cf1d6f9cdfaf1"
+let api_key = ""
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
